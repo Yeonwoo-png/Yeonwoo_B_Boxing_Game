@@ -5,10 +5,12 @@ let player1 = {
 };
 
 //second player
-let currentPlayer = {
+let player2 = {
     name: "Player 2",
     health: 100,
 };
+
+let currentPlayer = player1;
 
 // Function to generate random damage
 function generateDamage() {
@@ -17,9 +19,9 @@ function generateDamage() {
 
 // Function to apply damage to the opponent
 function applyDamage(opponent, damage) {
-    if (generateDamage() <= 3) {
+    if (generateDamage() <= 5) {
     console.log(`${currentPlayer.name} lands a basic hit on ${opponent.name}!`);
-    } else if (generateDamage() <= 10) {
+    } else if (generateDamage() >= 6 || generateDamage() <= 15) {
     console.log(`${currentPlayer.name} lands a critical hit on ${opponent.name}!`);
     } else {
     console.log(`${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊`);
